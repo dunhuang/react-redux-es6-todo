@@ -16,7 +16,7 @@ function deleteFromList(task){
   let newList = getLocalList().filter(function(item){
     return item.key!==task.key;
   });
-  setLocalList(newlist);
+  setLocalList(newList);
 }
 
 function updateList(task, changes){
@@ -37,31 +37,36 @@ function updateList(task, changes){
 }
 
 export function createTask(title) {
-  let task = {
-    key: new Date().getTime().toString(),
-    title,
-    completed: false
-  };
-  addToList(task);
-  return {
-    type: CREATE_TASK,
-    payload: task
-  };
+  return dispatch => {
+    let task = {
+      key: new Date().getTime().toString(),
+      title,
+      completed: false
+    };
+    addToList(task);
+    dispatch({
+      type: CREATE_TASK,
+      payload: task
+    });
+  }
 }
 
 export function deleteTask(task) {
-  deleteFromList(task);
-  return {
-    type: DELETE_TASK,
-    payload: task
-  };
+  return dispatch => {
+    deleteFromList(task);
+    dispatch({
+      type: DELETE_TASK,
+      payload: task
+    });
+  }
 }
 
 export function updateTask(task, changes) {
-  let newtask = updateList(task, changes);
-  return {
-    type: UPDATE_TASK,
-    payload: newtask
-  };
+  return dispatch => {
+    dispatch({
+      type: UPDATE_TASK,
+      payload: updateList(task, changes)
+    });
+  }
 }
 
