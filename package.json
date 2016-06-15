@@ -1,0 +1,67 @@
+{
+  "name": "react-redux-es6-todo",
+  "version": "0.0.1",
+  "description": "Todo app with React, Redux, written by es6",
+  "homepage": "https://github.com/dunhuang/react-redux-es6-todo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dunhuang/react-redux-es6-todo.git"
+  },
+  "author": {
+    "name": "Dunhuang",
+    "email": "shiyh2012@foxmail.com"
+  },
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=5.2"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --display-chunks --display-modules --progress",
+    "clean": "del-cli ./target",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress",
+    "server": "cross-env NODE_ENV=development nodemon -w 'server/**/*.*' ./server/main.js",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "autoprefixer": "~6.3.6",
+    "babel-core": "~6.9.1",
+    "babel-eslint": "6.0.4",
+    "babel-loader": "~6.2.4",
+    "babel-plugin-transform-function-bind": "~6.8.0",
+    "babel-polyfill": "~6.9.1",
+    "babel-preset-es2015": "~6.9.0",
+    "babel-preset-react": "~6.5.0",
+    "babel-preset-stage-1": "~6.5.0",
+    "classnames": "~2.2.5",
+    "cross-env": "~1.0.8",
+    "css-loader": "~0.23.1",
+    "del-cli": "~0.2.0",
+    "eslint": "~2.11.1",
+    "eslint-plugin-react": "~5.1.1",
+    "express": "~4.13.4",
+    "extract-text-webpack-plugin": "~1.0.1",
+    "firebase": "~3.0.3",
+    "html-webpack-plugin": "~2.19.0",
+    "minx": "~0.4.14",
+    "morgan": "~1.7.0",
+    "node-sass": "~3.7.0",
+    "nodemon": "~1.9.2",
+    "postcss-loader": "~0.9.1",
+    "react": "~15.1.0",
+    "react-addons-test-utils": "~15.1.0",
+    "react-dom": "~15.1.0",
+    "react-hot-loader": "3.0.0-beta.2",
+    "react-redux": "~4.4.5",
+    "react-router": "~2.4.1",
+    "react-router-redux": "~4.0.4",
+    "redux": "~3.5.2",
+    "redux-thunk": "~2.1.0",
+    "sass-loader": "~3.2.0",
+    "style-loader": "~0.13.1",
+    "webpack": "~1.13.1",
+    "webpack-dev-server": "~1.14.1",
+    "winston": "~2.2.0",
+    "webpack-md5-hash": "~0.0.5"
+  }
+}
